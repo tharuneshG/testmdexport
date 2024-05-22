@@ -1,0 +1,40 @@
+# Review Tool_Design Review Checklist - v1.1
+
+- [ ] General
+  - [ ] Does the design support both product and project goals?
+  - [ ] Does this design have architectural impact?
+  - [ ] Does this change have high-level design impact or just low level design impact?
+  - [ ] Is the design feasible from a technology, cost, and schedule standpoint?
+  - [ ] Is the design consistent with existing modules and functionalities of ReviewTool
+  - [ ] Have known design risks been identified, analyzed, and planned for or mitigated?
+  - [ ] Were proven past designs reused?
+  - [ ] Have proper fallback consideration been made?
+  - [ ] Is the revision history updated properly?
+  - [ ] Is the Table of Contents and Figures properly updated?
+- [ ] Design Considerations
+  - [ ] Is the design flexible enough to accommodate and forecast requirement changes
+  - [ ] Is the design common for all business units? If not is it mentioned properly in the document
+  - [ ] Is the design corroborated with UML diagrams
+  - [ ] For low level design: Does the files (JavaScript, Java, sass, html, properties) involved in design documented properly?
+  - [ ] Is DB tables, schema, columns and views involved are documented properly for LLDs and HLDs if applicable
+  - [ ] Is the drawbacks or constraints for the design documented?
+  - [ ] Is the design unjustifiably complex? Is the solution introduces more complexity than the inherent complexity defined in problem?
+  - [ ] Is the design lean? Can the design be made leaner?
+  - [ ] Have all interfacing systems been identified and documented?
+  - [ ] Is there any alternate design considered and documented with advantages and disadvantages?
+  - [ ] Does the design allow for scalability? Will the design have effect on a surge in users or requests to Tool?
+  - [ ] Will the design be easily portable to another environment (like Tomcat, J-Boss) if appropriate?
+- [ ] Requirements Traceability
+  - [ ] Does the design address all issues from the requirements?
+  - [ ] Is the traceability section updated properly with links to Work Items (Epic, Story and Task)?
+  - [ ] Is enough reference to other appropriate documents updated properly when and where necessary?
+  - [ ] If there is UML diagrams depicted: Had the EAP file checked-in to RTC and link provided in Traceability section?
+  - [ ] Does the design document all the impacted modules in ReviewTool?
+  - [ ] Is there any DAR created before arriving at solution. If yes, Is the DAR checked-in to RTC and link provided in Traceability
+- [ ] Performance Reliability
+  - [ ] Are all performance attributes, assumptions, and constraints clearly defined?
+  - [ ] If appropriate, are there justifications for design performance?
+  - [ ] Will the design cause performance issues for other modules which are cited in impacted modules?
+- [ ] Maintainability
+  - [ ] Is the design clear and descriptive enough to be understandable for fresh members in the team
+  - [ ] If reusable parts of other designs are being used, has their effect on design and integration been documented?

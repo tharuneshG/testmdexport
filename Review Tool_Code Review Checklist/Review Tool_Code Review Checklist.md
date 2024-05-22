@@ -1,0 +1,94 @@
+# Review Tool_Code Review Checklist - v1.2
+
+- [ ] General
+  - [ ] Does the code perform the task as per the Work Item?
+  - [ ] Does review scope properly set for all files?
+  - [ ] Is the code confirming to design?
+  - [ ] Does the functionality applied for all required business unit files?
+  - [ ] While removing functionality from a code, check if the code is referenced from other places. If not referenced, look for possibility to remove the file from code base?
+  - [ ] Is the new JavaScript or CSS file change applied to Grunt as well?
+  - [ ] Is OSS licenses verified for new jar files, JavaScript and CSS plugin files etcetera?
+  - [ ] Is the change need checkpoints while deployment?
+  - [ ] While including a new version of an existing jar, have we done regression testing?
+  - [ ] Have we removed earlier version of jar when new version is incorporated?
+  - [ ] Is there workflow changes which involves modification in modeler
+- [ ] Java
+  - [ ] Is the code 'organized imports' and formatted properly?
+  - [ ] Is Java Documentation provided for all public methods and proper comments provided for other methods?
+  - [ ] Are there any unused variables in method level or instance level?
+  - [ ] Are exceptions properly thrown in Service and DAO Layer with proper message and correct wrap?
+  - [ ] Are exceptions handled in Resource Layer with meaningful message returned to client side?
+  - [ ] Is Workflow classes handled exceptions properly? Process variables must be set properly before navigating out of Workflow classes
+  - [ ] Does the method handle multiple responsibilities? Each method should have a single responsibility
+  - [ ] Is the code written to interfaces or concrete implementations?
+  - [ ] Does the method functionality duplicated. Enforce reusability?
+  - [ ] Are the inputs to a method properly validated before processing?
+  - [ ] Are the beans coming from AngularJs properly validated before request processing at Resource layer?
+  - [ ] Does the class promotes cohesion and reduce coupling?
+  - [ ] Are concrete implementations instantiated from the code? Code to interface and use factories if needed
+  - [ ] Is hardcoding avoided except for magic numbers?
+  - [ ] Can the functional interface be replaced with a built in one?
+  - [ ] Is the class open for extensions and closed for modifications?
+  - [ ] Are the class and methods ornamented with proper annotations?
+  - [ ] Can the expression be replaced with a method reference?
+  - [ ] Are the variables, classes and methods named properly? Names should follow Java naming conventions and must not be too long
+  - [ ] Is there any printStackTrace or Sysouts in the code?
+  - [ ] Is the method parameters mutated as part of execution? Look for non-final parameters
+  - [ ] Does the code expose too much privileges? Keep properties private and provide setters only if needed.
+  - [ ] Are there too much logging happening. Log only necessary information with appropriate logging levels?
+  - [ ] Are the resources released properly? Look for JDBC resources, Hibernate resources, Connector descriptors and File handlers.
+  - [ ] Are we logging any sensitive information?
+  - [ ] Is there any sensitive data not cleared from memory or cache?
+  - [ ] Is there too much synchronization happening? Synchronize only necessary portions.
+  - [ ] Is the method returns null or cause NullPointerException in any scenario?
+  - [ ] Does the method override hashCode when it override equals?
+  - [ ] Does the code properly documented for parallel use cases?
+  - [ ] Is it possible to convert integer constants to enum?
+  - [ ] Is blocks of code written directly inside lambda expressions?
+- [ ] HTML
+  - [ ] Is the template change applicable for other business units?
+  - [ ] Is ng-cloak used to prevent content to flash the screen while using expressions?
+  - [ ] Do we have complex expressions handled directly in views?
+  - [ ] Is it possible to use one-time binding for the expression?
+  - [ ] Is the view-model functions called directly from templates expensive enough to be cached?
+  - [ ] Are we hard coding styles directly in html which can be replaced with classes?
+  - [ ] Have we used ng-model-options to manually control the digest cycle?
+- [ ] JavaScript
+  - [ ] Is the code follows proper coding standards defined in ReviewTool Architecture?
+  - [ ] Is proper documentation provided for the code?
+  - [ ] Is proper constants applied instead of hardcoded values?
+  - [ ] Is the code easily understandable?
+  - [ ] Is messages and labels shown in UI are taken from translate provider?
+  - [ ] Is the same code duplicated in more than one controller movable to service?
+  - [ ] Is there many commented out sections blocking the readability?
+  - [ ] Is there many nested if else statements which can be refactored?
+  - [ ] Is the scope object used unnecessarily for holding helper methods and utility objects?
+  - [ ] Are there unused scope variables or global variables in the controller?
+  - [ ] Are we injecting objects which are not used in the file?
+  - [ ] Do we have jQuery code or other DOM manipulation code mixed with AngularJs controller code? 
+  - [ ] Is there are many console logs with expensive or live objects which might performance
+  - [ ] Are there any ES6 or ES7 features used which are not supported across all browsers?
+  - [ ] Is new controllers use 'controller as' syntax. Avoid injecting $scope unless necessary?
+  - [ ] Are we using any custom objects or variables name prefix with $?
+  - [ ] Is the code excessively use $rootScope to place data in global scope?
+  - [ ] Is proper order maintained while injecting custom objects and built-in objects?
+  - [ ] Are we re-inventing any built-in functionality?
+  - [ ] Do we have default route maintained if route or resolve fails?
+  - [ ] Is this change require confidentiality matrix JSON update?
+  - [ ] Do we provide error callbacks and handled the scenario for HTTP communications?
+  - [ ] Are we loading dependencies directly from controller instead of resolving from router?
+  - [ ] Is strict contextual escaping enabled for trusting contents?
+  - [ ] Is there any expensive logic happening inside filter? Use controller directly instead of filter for expensive processing
+  - [ ] Is the logic expensive enough to be delegated to a worker?
+  - [ ] Is there logics in watchers expensive enough to be refactored?
+  - [ ] Is there deep watching involved which can be replaced with $watchCollection?
+  - [ ] Have we skipped digest in timeouts when no watched variables are impacted?
+  - [ ] Do we create any resource which must be released on controller scope destroy?
+  - [ ] Have we purged all event listeners on controller scope destroy?
+  - [ ] While extending prototypes for built in objects have we checked its existence in the beginning?
+- [ ] CSS
+  - [ ] Is the change tested and working across supported browsers
+  - [ ] Is the change tested and working across supported resolutions
+  - [ ] Are we hardcoding font-size, color etcetera directly in sass which can be taken from variables
+  - [ ] Are we using flattened structure in sass for styling which can be inherited according to the hierarchical DOM structure
+  - [ ] Are we creating new classes when existing classes can be reused
